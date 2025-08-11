@@ -103,6 +103,141 @@ export default function Home() {
             </p>
           </div>
           
+          {/* Animated Dashboard Preview */}
+          <div className="mt-12 flex justify-center">
+            <div className="bg-white rounded-xl shadow-2xl p-6 max-w-4xl w-full">
+              <svg viewBox="0 0 800 500" className="w-full h-auto">
+                {/* Dashboard Background */}
+                <rect width="800" height="500" fill="#f8fafc" rx="12"/>
+                
+                {/* Header */}
+                <rect x="20" y="20" width="760" height="50" fill="#ffffff" rx="8"/>
+                <text x="40" y="45" className="fill-gray-800 text-lg font-semibold">Data Dashboard</text>
+                
+                {/* Animated Chart 1 - Bar Chart */}
+                <g transform="translate(40, 100)">
+                  <rect x="0" y="0" width="220" height="160" fill="#ffffff" rx="8"/>
+                  <text x="10" y="25" className="fill-gray-700 text-sm font-medium">Revenue by Quarter</text>
+                  
+                  {/* Bars */}
+                  <rect x="30" y="120" width="30" height="20" fill="#3b82f6">
+                    <animate attributeName="height" values="20;60;20" dur="3s" repeatCount="indefinite"/>
+                    <animate attributeName="y" values="120;80;120" dur="3s" repeatCount="indefinite"/>
+                  </rect>
+                  <rect x="70" y="110" width="30" height="30" fill="#6366f1">
+                    <animate attributeName="height" values="30;80;30" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+                    <animate attributeName="y" values="110;60;110" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+                  </rect>
+                  <rect x="110" y="100" width="30" height="40" fill="#8b5cf6">
+                    <animate attributeName="height" values="40;100;40" dur="3s" repeatCount="indefinite" begin="1s"/>
+                    <animate attributeName="y" values="100;40;100" dur="3s" repeatCount="indefinite" begin="1s"/>
+                  </rect>
+                  <rect x="150" y="90" width="30" height="50" fill="#a855f7">
+                    <animate attributeName="height" values="50;120;50" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+                    <animate attributeName="y" values="90;20;90" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+                  </rect>
+                </g>
+                
+                {/* Animated Chart 2 - Line Chart */}
+                <g transform="translate(280, 100)">
+                  <rect x="0" y="0" width="220" height="160" fill="#ffffff" rx="8"/>
+                  <text x="10" y="25" className="fill-gray-700 text-sm font-medium">User Growth</text>
+                  
+                  {/* Animated line */}
+                  <polyline points="20,140 60,120 100,100 140,80 180,60" 
+                           fill="none" 
+                           stroke="#10b981" 
+                           strokeWidth="3"
+                           strokeDasharray="200"
+                           strokeDashoffset="200">
+                    <animate attributeName="stroke-dashoffset" values="200;0;200" dur="4s" repeatCount="indefinite"/>
+                  </polyline>
+                  
+                  {/* Data points */}
+                  <circle cx="20" cy="140" r="4" fill="#10b981">
+                    <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+                  </circle>
+                  <circle cx="60" cy="120" r="4" fill="#10b981">
+                    <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+                  </circle>
+                  <circle cx="100" cy="100" r="4" fill="#10b981">
+                    <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1.5s"/>
+                  </circle>
+                  <circle cx="140" cy="80" r="4" fill="#10b981">
+                    <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="2s"/>
+                  </circle>
+                  <circle cx="180" cy="60" r="4" fill="#10b981">
+                    <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="2.5s"/>
+                  </circle>
+                </g>
+                
+                {/* Animated Chart 3 - Donut Chart */}
+                <g transform="translate(520, 100)">
+                  <rect x="0" y="0" width="220" height="160" fill="#ffffff" rx="8"/>
+                  <text x="10" y="25" className="fill-gray-700 text-sm font-medium">Traffic Sources</text>
+                  
+                  {/* Donut segments */}
+                  <circle cx="110" cy="90" r="35" fill="none" stroke="#ef4444" strokeWidth="20" 
+                          strokeDasharray="70 150" strokeDashoffset="0">
+                    <animateTransform attributeName="transform" type="rotate" 
+                                    values="0 110 90;360 110 90" dur="8s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="110" cy="90" r="35" fill="none" stroke="#f59e0b" strokeWidth="20" 
+                          strokeDasharray="50 170" strokeDashoffset="70">
+                    <animateTransform attributeName="transform" type="rotate" 
+                                    values="0 110 90;360 110 90" dur="8s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="110" cy="90" r="35" fill="none" stroke="#10b981" strokeWidth="20" 
+                          strokeDasharray="100 120" strokeDashoffset="120">
+                    <animateTransform attributeName="transform" type="rotate" 
+                                    values="0 110 90;360 110 90" dur="8s" repeatCount="indefinite"/>
+                  </circle>
+                </g>
+                
+                {/* KPI Cards */}
+                <g transform="translate(40, 290)">
+                  <rect x="0" y="0" width="160" height="80" fill="#ffffff" rx="8"/>
+                  <text x="10" y="25" className="fill-gray-500 text-xs">Total Revenue</text>
+                  <text x="10" y="50" className="fill-gray-900 text-xl font-bold">$2.4M</text>
+                  <text x="10" y="70" className="fill-green-500 text-sm">↗ 12.5%</text>
+                </g>
+                
+                <g transform="translate(220, 290)">
+                  <rect x="0" y="0" width="160" height="80" fill="#ffffff" rx="8"/>
+                  <text x="10" y="25" className="fill-gray-500 text-xs">Active Users</text>
+                  <text x="10" y="50" className="fill-gray-900 text-xl font-bold">45.2K</text>
+                  <text x="10" y="70" className="fill-green-500 text-sm">↗ 8.1%</text>
+                </g>
+                
+                <g transform="translate(400, 290)">
+                  <rect x="0" y="0" width="160" height="80" fill="#ffffff" rx="8"/>
+                  <text x="10" y="25" className="fill-gray-500 text-xs">Conversion Rate</text>
+                  <text x="10" y="50" className="fill-gray-900 text-xl font-bold">3.24%</text>
+                  <text x="10" y="70" className="fill-red-500 text-sm">↘ 2.1%</text>
+                </g>
+                
+                <g transform="translate(580, 290)">
+                  <rect x="0" y="0" width="160" height="80" fill="#ffffff" rx="8"/>
+                  <text x="10" y="25" className="fill-gray-500 text-xs">Avg Session</text>
+                  <text x="10" y="50" className="fill-gray-900 text-xl font-bold">4:32</text>
+                  <text x="10" y="70" className="fill-green-500 text-sm">↗ 15.3%</text>
+                </g>
+                
+                {/* Floating data points animation */}
+                <circle r="3" fill="#3b82f6" opacity="0.6">
+                  <animateMotion dur="6s" repeatCount="indefinite" 
+                                path="M100,400 Q200,350 300,380 T500,370 T700,390"/>
+                  <animate attributeName="opacity" values="0;0.8;0" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="2" fill="#10b981" opacity="0.4">
+                  <animateMotion dur="8s" repeatCount="indefinite" begin="2s"
+                                path="M150,420 Q350,380 450,400 T650,410 T750,400"/>
+                  <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+                </circle>
+              </svg>
+            </div>
+          </div>
+          
           <div className="mt-16">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -200,11 +335,130 @@ export default function Home() {
           
           <div className="mb-12">
             <p className="text-gray-300 mb-8">Already trusted by teams at</p>
-            <div className="flex items-center justify-center space-x-8 opacity-60">
-              <div className="bg-white rounded px-4 py-2 text-gray-800 font-semibold">Startup A</div>
-              <div className="bg-white rounded px-4 py-2 text-gray-800 font-semibold">Startup B</div>
-              <div className="bg-white rounded px-4 py-2 text-gray-800 font-semibold">Startup C</div>
-              <div className="bg-white rounded px-4 py-2 text-gray-800 font-semibold">Startup D</div>
+            
+            {/* Testimonials Carousel */}
+            <div className="relative max-w-4xl mx-auto">
+              <div className="overflow-hidden">
+                <div className="flex animate-[slide_20s_infinite_linear]">
+                  {/* Testimonial 1 */}
+                  <div className="min-w-full px-8">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            S
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white text-lg mb-4 italic">
+                            "We went from spending 3 hours analyzing campaign data to getting insights in 30 seconds. Game changer for our marketing team."
+                          </p>
+                          <div>
+                            <p className="text-white font-semibold">Sarah Chen</p>
+                            <p className="text-gray-300 text-sm">Head of Growth, TechFlow</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Testimonial 2 */}
+                  <div className="min-w-full px-8">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            M
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white text-lg mb-4 italic">
+                            "Finally, a tool that speaks our language. No more waiting for engineering to pull data - we get answers instantly."
+                          </p>
+                          <div>
+                            <p className="text-white font-semibold">Marcus Rodriguez</p>
+                            <p className="text-gray-300 text-sm">Product Manager, DataSync</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Testimonial 3 */}
+                  <div className="min-w-full px-8">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            A
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white text-lg mb-4 italic">
+                            "The insights we're getting helped us identify bottlenecks we didn't even know existed. ROI was immediate."
+                          </p>
+                          <div>
+                            <p className="text-white font-semibold">Aisha Patel</p>
+                            <p className="text-gray-300 text-sm">VP Operations, ScaleUp</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Testimonial 4 */}
+                  <div className="min-w-full px-8">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            J
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white text-lg mb-4 italic">
+                            "Our executive team now makes data-driven decisions in real-time instead of waiting for weekly reports."
+                          </p>
+                          <div>
+                            <p className="text-white font-semibold">James Kim</p>
+                            <p className="text-gray-300 text-sm">CEO, InnovateLabs</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Repeat first testimonial for seamless loop */}
+                  <div className="min-w-full px-8">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            S
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white text-lg mb-4 italic">
+                            "We went from spending 3 hours analyzing campaign data to getting insights in 30 seconds. Game changer for our marketing team."
+                          </p>
+                          <div>
+                            <p className="text-white font-semibold">Sarah Chen</p>
+                            <p className="text-gray-300 text-sm">Head of Growth, TechFlow</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Carousel indicators */}
+              <div className="flex justify-center mt-8 space-x-2">
+                <div className="w-2 h-2 rounded-full bg-white/30"></div>
+                <div className="w-2 h-2 rounded-full bg-white/30"></div>
+                <div className="w-2 h-2 rounded-full bg-white/30"></div>
+                <div className="w-2 h-2 rounded-full bg-white/30"></div>
+              </div>
             </div>
           </div>
           

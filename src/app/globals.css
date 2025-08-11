@@ -26,14 +26,86 @@ body {
 }
 
 /* Testimonials carousel animation */
-@keyframes slide {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(0); }
-  25% { transform: translateX(-100%); }
-  45% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  70% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  95% { transform: translateX(-300%); }
-  100% { transform: translateX(-400%); }
+@keyframes smoothSlide {
+  0% { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+  18% { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+  22% { 
+    transform: translateX(-100%);
+    opacity: 0.9;
+  }
+  25% { 
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  43% { 
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  47% { 
+    transform: translateX(-200%);
+    opacity: 0.9;
+  }
+  50% { 
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+  68% { 
+    transform: translateX(-200%);
+    opacity: 1;
+  }
+  72% { 
+    transform: translateX(-300%);
+    opacity: 0.9;
+  }
+  75% { 
+    transform: translateX(-300%);
+    opacity: 1;
+  }
+  93% { 
+    transform: translateX(-300%);
+    opacity: 1;
+  }
+  97% { 
+    transform: translateX(-400%);
+    opacity: 0.9;
+  }
+  100% { 
+    transform: translateX(-400%);
+    opacity: 1;
+  }
 }
+
+/* Add smooth easing and better performance */
+.carousel-container {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.carousel-slide {
+  animation: smoothSlide 24s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* Active indicator animation */
+@keyframes indicatorPulse {
+  0%, 18% { 
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+  }
+  22%, 100% { 
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+}
+
+.indicator-1 { animation: indicatorPulse 24s infinite; }
+.indicator-2 { animation: indicatorPulse 24s infinite 6s; }
+.indicator-3 { animation: indicatorPulse 24s infinite 12s; }
+.indicator-4 { animation: indicatorPulse 24s infinite 18s; }

@@ -337,9 +337,9 @@ export default function Home() {
             <p className="text-gray-300 mb-8">Already trusted by teams at</p>
             
             {/* Testimonials Carousel */}
-            <div className="relative max-w-4xl mx-auto">
-              <div className="overflow-hidden">
-                <div className="flex animate-[slide_20s_infinite_linear]">
+            <div className="relative max-w-4xl mx-auto carousel-container">
+              <div className="overflow-hidden rounded-3xl">
+                <div className="flex carousel-slide">
                   {/* Testimonial 1 */}
                   <div className="min-w-full px-8">
                     <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
@@ -453,11 +453,11 @@ export default function Home() {
               </div>
               
               {/* Carousel indicators */}
-              <div className="flex justify-center mt-8 space-x-2">
-                <div className="w-2 h-2 rounded-full bg-white/30"></div>
-                <div className="w-2 h-2 rounded-full bg-white/30"></div>
-                <div className="w-2 h-2 rounded-full bg-white/30"></div>
-                <div className="w-2 h-2 rounded-full bg-white/30"></div>
+              <div className="flex justify-center mt-8 space-x-3">
+                <div className="w-3 h-3 rounded-full bg-white/30 transition-all duration-300 indicator-1"></div>
+                <div className="w-3 h-3 rounded-full bg-white/30 transition-all duration-300 indicator-2"></div>
+                <div className="w-3 h-3 rounded-full bg-white/30 transition-all duration-300 indicator-3"></div>
+                <div className="w-3 h-3 rounded-full bg-white/30 transition-all duration-300 indicator-4"></div>
               </div>
             </div>
           </div>

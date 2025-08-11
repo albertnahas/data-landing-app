@@ -1,4 +1,8 @@
 import Image from "next/image";
+import InteractiveDemo from "../components/InteractiveDemo";
+import FAQSection from "../components/FAQSection";
+import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -30,7 +34,7 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl" role="banner">
               <span className="block">Decisions that used to</span>
               <span className="block text-indigo-400">take days — now in minutes.</span>
             </h1>
@@ -38,10 +42,14 @@ export default function Home() {
               Connect your company data, ask a question, get research-backed answers instantly.
             </p>
             <div className="mt-8 flex gap-4 justify-center">
-              <button className="rounded-full bg-indigo-600 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200">
+              <button 
+                className="rounded-full bg-indigo-600 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-200"
+                aria-label="Join the beta program">
                 Join the Beta
               </button>
-              <button className="rounded-full border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 transition-all duration-200">
+              <button 
+                className="rounded-full border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 transition-all duration-200"
+                aria-label="Watch demo video">
                 See It in Action
               </button>
             </div>
@@ -274,6 +282,147 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Integration Showcase */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+              Works with your existing stack
+            </h2>
+            <p className="text-lg text-gray-600 mb-12">
+              Connect your favorite tools in minutes with our powerful integrations
+            </p>
+          </div>
+
+          {/* Integration Logos Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-center mb-16">
+            {/* Salesforce */}
+            <div className="flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-300 group">
+              <Image
+                src="/salesforce-logo.svg"
+                alt="Salesforce"
+                width={120}
+                height={40}
+                className="max-h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+
+            {/* Google Analytics */}
+            <div className="flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-300 group">
+              <Image
+                src="/google-analytics-logo.svg"
+                alt="Google Analytics"
+                width={120}
+                height={40}
+                className="max-h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+
+            {/* Stripe */}
+            <div className="flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-300 group">
+              <Image
+                src="/stripe-logo.svg"
+                alt="Stripe"
+                width={120}
+                height={40}
+                className="max-h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+
+            {/* HubSpot */}
+            <div className="flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-300 group">
+              <Image
+                src="/hubspot-logo.svg"
+                alt="HubSpot"
+                width={120}
+                height={40}
+                className="max-h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+
+            {/* Slack */}
+            <div className="flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-300 group">
+              <Image
+                src="/slack-logo.svg"
+                alt="Slack"
+                width={120}
+                height={40}
+                className="max-h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+
+            {/* Jira */}
+            <div className="flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-300 group">
+              <Image
+                src="/jira-logo.svg"
+                alt="Jira"
+                width={120}
+                height={40}
+                className="max-h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+
+            {/* Microsoft Teams */}
+            <div className="flex items-center justify-center p-6 bg-gray-50 rounded-xl hover:bg-gray-100 hover:shadow-md transition-all duration-300 group">
+              <Image
+                src="/microsoft-teams-logo.svg"
+                alt="Microsoft Teams"
+                width={120}
+                height={40}
+                className="max-h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </div>
+
+          {/* API Documentation Teaser */}
+          <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 border border-indigo-100">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-6">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 mr-4">
+                  <svg className="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Connect in Minutes</h3>
+                  <p className="text-gray-600">
+                    Simple REST API and pre-built connectors make integration effortless
+                  </p>
+                </div>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="bg-white rounded-lg p-4 shadow-sm">
+                    <div className="text-indigo-600 text-2xl font-bold mb-2">5 min</div>
+                    <div className="text-gray-600 text-sm">Average setup time</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="bg-white rounded-lg p-4 shadow-sm">
+                    <div className="text-indigo-600 text-2xl font-bold mb-2">50+</div>
+                    <div className="text-gray-600 text-sm">Pre-built integrations</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="bg-white rounded-lg p-4 shadow-sm">
+                    <div className="text-indigo-600 text-2xl font-bold mb-2">99.9%</div>
+                    <div className="text-gray-600 text-sm">Uptime reliability</div>
+                  </div>
+                </div>
+              </div>
+
+              <button className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-colors duration-200 mr-4">
+                View API Docs
+              </button>
+              <button className="bg-white text-indigo-600 border-2 border-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-indigo-50 transition-colors duration-200">
+                See All Integrations
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Example Queries */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -295,7 +444,7 @@ export default function Home() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Product Insights</h3>
               <p className="text-gray-600 italic">
-                "Which product feature gets the most support tickets?"
+                &quot;Which product feature gets the most support tickets?&quot;
               </p>
             </div>
             
@@ -307,7 +456,7 @@ export default function Home() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Campaign Performance</h3>
               <p className="text-gray-600 italic">
-                "Which campaigns brought the highest revenue last month?"
+                &quot;Which campaigns brought the highest revenue last month?&quot;
               </p>
             </div>
             
@@ -319,12 +468,18 @@ export default function Home() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Funnel Analysis</h3>
               <p className="text-gray-600 italic">
-                "Where are customers dropping off in the funnel?"
+                &quot;Where are customers dropping off in the funnel?&quot;
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Interactive Demo */}
+      <InteractiveDemo />
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* Social Proof & CTA */}
       <section className="py-16 bg-gray-900">
@@ -351,7 +506,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1">
                           <p className="text-white text-lg mb-4 italic">
-                            "We went from spending 3 hours analyzing campaign data to getting insights in 30 seconds. Game changer for our marketing team."
+                            &quot;We went from spending 3 hours analyzing campaign data to getting insights in 30 seconds. Game changer for our marketing team.&quot;
                           </p>
                           <div>
                             <p className="text-white font-semibold">Sarah Chen</p>
@@ -373,7 +528,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1">
                           <p className="text-white text-lg mb-4 italic">
-                            "Finally, a tool that speaks our language. No more waiting for engineering to pull data - we get answers instantly."
+                            &quot;Finally, a tool that speaks our language. No more waiting for engineering to pull data - we get answers instantly.&quot;
                           </p>
                           <div>
                             <p className="text-white font-semibold">Marcus Rodriguez</p>
@@ -395,7 +550,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1">
                           <p className="text-white text-lg mb-4 italic">
-                            "The insights we're getting helped us identify bottlenecks we didn't even know existed. ROI was immediate."
+                            &quot;The insights we&apos;re getting helped us identify bottlenecks we didn&apos;t even know existed. ROI was immediate.&quot;
                           </p>
                           <div>
                             <p className="text-white font-semibold">Aisha Patel</p>
@@ -417,7 +572,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1">
                           <p className="text-white text-lg mb-4 italic">
-                            "Our executive team now makes data-driven decisions in real-time instead of waiting for weekly reports."
+                            &quot;Our executive team now makes data-driven decisions in real-time instead of waiting for weekly reports.&quot;
                           </p>
                           <div>
                             <p className="text-white font-semibold">James Kim</p>
@@ -439,7 +594,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1">
                           <p className="text-white text-lg mb-4 italic">
-                            "We went from spending 3 hours analyzing campaign data to getting insights in 30 seconds. Game changer for our marketing team."
+                            &quot;We went from spending 3 hours analyzing campaign data to getting insights in 30 seconds. Game changer for our marketing team.&quot;
                           </p>
                           <div>
                             <p className="text-white font-semibold">Sarah Chen</p>
@@ -482,6 +637,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
+      
+      {/* Scroll to Top */}
+      <ScrollToTop />
     </div>
   );
 }
